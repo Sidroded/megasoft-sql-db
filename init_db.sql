@@ -1,7 +1,7 @@
 CREATE TABLE worker (
 	ID bigint PRIMARY KEY AUTO_INCREMENT,
 	NAME varchar(1000) check (LENGTH(NAME) >= 2),
-	BIRTHDAY int check(BIRTHDAY > 1900),
+	BIRTHDAY date CHECK (YEAR(BIRTHDAY) > 1900),
 	LEVEL ENUM('Trainee', 'Junior', 'Middle', 'Senior'),
 	SALARY int check(SALARY > 100 and SALARY < 100000)
 )
